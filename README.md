@@ -11,6 +11,8 @@ Npm packages will be deployed shortly.
 
 ## Basic usage
 
+See all available [configuration options](https://veeplay.github.io/json-docs/).
+
 ````
 <div id="player"></div>
 <script src="<CDN_URL>"></script>
@@ -202,3 +204,39 @@ Toggle between fullscreen and inline mode
 Return the current playback position
 - `getEventTracker()`
 Return the `EventTracker` object associated with the player instance
+
+## Custom overlays
+
+After you included mp.bundle.js in your webpage create a subclass of `OverlayController` and implement the `load` method:
+
+````
+class CustomOverlayController extends OverlayController {
+    load() {
+        // Set the overlay's width and height
+        this.overlay.width = 'auto';
+        this.overlay.height = 'auto';
+
+        // Create an image
+        this.imageView = document.createElement('img');
+        this.imageView.src = 'https://veeplay.com/wp-content/themes/veeplay/images/logo_veeplay.png';
+
+        // Add the image to the overlay's element
+        this.view.appendChild(this.imageView);
+    }
+}
+````
+
+Register your custom overlay controller:
+````
+player.controllerRegistry.registerOverlayController(CustomOverlayController, 'customc');
+````
+where `customc` is an identifier to be used as your overlay "type".
+
+## Google IMA SDK integration
+
+If you'd like to use Google's IMA SDK instead of the internal VAST support, add a script tag pointing to the official JavaScript library:
+````
+<script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+````
+
+then set to `true` the `preferGoogleIma` property on the `MediaPlayer` instance your using, as soon as possible after instantiaton.
