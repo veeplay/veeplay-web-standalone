@@ -7,7 +7,11 @@ Veeplay is available as a JS bundle that can be retrieved from this repository, 
 
 `https://cdn.veeplay.com/veeplay-web/1.1.2/mp.bundle.js`
 
-Npm packages will be deployed shortly.
+Npm package coming soon.
+
+#### Getting an `invalidLicense` error?
+
+Usage under the `localhost` domain is open. To use with a different domain name, go to [your Veeplay panel](https://panel.veeplay.com/) and register a new application.
 
 ## Basic usage
 
