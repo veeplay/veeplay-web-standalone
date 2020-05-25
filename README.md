@@ -208,6 +208,8 @@ Toggle between fullscreen and inline mode
 Return the current playback position
 - `getEventTracker()`
 Return the `EventTracker` object associated with the player instance
+- `audioTracks()`
+Return a list of AudioTrack objects associated with current video. Set the `enabled` attribute to true on any AudioTrack to switch between multiple audio tracks.
 
 ## Custom overlays
 
