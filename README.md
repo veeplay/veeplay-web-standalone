@@ -5,7 +5,7 @@
 
 Veeplay is available as a JS bundle that can be retrieved from this repository, as well as from the Veeplay CDN:
 
-`https://cdn.veeplay.com/veeplay-web/1.1.4/mp.bundle.js`
+`https://cdn.veeplay.com/veeplay-web/1.1.5/mp.bundle.js`
 
 Npm package coming soon.
 
@@ -237,6 +237,27 @@ Register your custom overlay controller:
 player.controllerRegistry.registerOverlayController(CustomOverlayController, 'customc');
 ````
 where `customc` is an identifier to be used as your overlay "type".
+
+## Adding additional HTTP/S headers to HLS HTTP requests
+
+In some cases, you might want to add some additional HTTP headers to the requests made for retrieving HLS manifests or .ts chunks.
+
+In order to do so, pass an `options` dictionary when constructing the player object, like so:
+
+````
+const options = {
+    hlsHeaders: {
+        'X-USES-VEEPLAY': 'true',
+        'X-TEST-HEADER': 'value',
+    }
+}
+const player = new MediaPlayer('player', options);
+````
+
+Notes:
+- the CORS configuration on the server needs to allow these custom headers as well.
+- the headers are only applied for HLS requests, HTTP requests for MP4 streams or VAST tags will not be affected by this setting.
+
 
 ## Google IMA SDK integration
 
