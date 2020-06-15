@@ -5,7 +5,7 @@
 
 Veeplay is available as a JS bundle that can be retrieved from this repository, as well as from the Veeplay CDN:
 
-`https://cdn.veeplay.com/veeplay-web/1.1.5/mp.bundle.js`
+`https://cdn.veeplay.com/veeplay-web/1.1.7/mp.bundle.js`
 
 Npm package coming soon.
 
@@ -90,9 +90,21 @@ The player uses an EventEmitter instance for propagating player events. The inst
 
 `const tracker = player.getEventTracker()`
 
-In order to subscribe to an event type, use the following snippet:
+In order to subscribe to events (player state updates), use the following snippet:
 
-`tracker.emitter.on('EVENT_NAME', (metadata) => console.log(metadata));`
+````
+tracker.emitter.on('trackedEvent', (e) => {
+    if (e.event === EVENTS.PAUSE) {
+    console.log('paused');
+    } else if (e.event === EVENTS.RESUME) {
+    console.log('resumed');
+    }
+});
+````
+
+In order to subscribe to notifications (player UI updates), use the following example:
+
+`tracker.emitter.on(NOTIFICATIONS.ENTER_FULLSCREEN, () => console.log('fullscreen mode on'));`
 
 The full list of events and notifications supported by the player are exported in the SDK bundle, alongside the MediaPlayer and MediaBuilder classes:
 
