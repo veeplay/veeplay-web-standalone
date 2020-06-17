@@ -5,7 +5,7 @@
 
 Veeplay is available as a JS bundle that can be retrieved from this repository, as well as from the Veeplay CDN:
 
-`https://cdn.veeplay.com/veeplay-web/1.1.7/mp.bundle.js`
+`https://cdn.veeplay.com/veeplay-web/1.1.8/mp.bundle.js`
 
 Npm package coming soon.
 
