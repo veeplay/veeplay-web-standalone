@@ -1,12 +1,8 @@
 {
   "name": "veeplay",
-  "version": "1.1.2",
+  "version": "1.1.14",
   "description": "Veeplay HTML5 Media Player",
   "main": "dist/mp.bundle.js",
-  "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start:dev": "webpack-dev-server --hot --inline --host 0.0.0.0 --config webpack.dev.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/veeplay/veeplay-web-standalone"
@@ -42,26 +38,14 @@
   "files": [
     "/dist"
   ],
-  "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/plugin-transform-spread": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^2.1.0",
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2"
-  },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
+    "buffer": "^6.0.3",
     "circular-progress-bar": "^1.2.2",
+    "lodash": "^4.17.20",
     "nanoid": "^2.0.1",
-    "video.js": "^7.6.5",
+    "stream-browserify": "^3.0.0",
+    "video.js": "^7.7.6",
     "xml-js": "^1.6.11"
   }
 }
