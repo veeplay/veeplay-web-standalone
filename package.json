@@ -1,6 +1,6 @@
 {
   "name": "veeplay",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "Veeplay HTML5 Media Player",
   "main": "dist/mp.bundle.js",
   "repository": {
